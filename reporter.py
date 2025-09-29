@@ -29,7 +29,7 @@ def get_weather(city, api_key):
         print(f"Error fetching weather data: {response.status_code}")
         return None
     
-    # Use the json library explicitly to satisfy the assignment requirement
+    # Use the json library
     data = json.loads(response.text)
 
     # Some API errors return 200 but include an error code in JSON
@@ -84,7 +84,7 @@ if __name__ == "__main__":
 
             weather = get_weather(city, API_KEY)
             if not weather:
-                # Stop if we couldn't fetch valid data
+                # Stop if it could not fetch valid data
                 raise SystemExit
             
             print("\n--- Weather Report ---")
